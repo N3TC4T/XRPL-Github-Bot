@@ -1,0 +1,23 @@
+
+<table align="center">
+    <tr>
+        <td align="center">Account</td>
+        <td align="center">{{ tx.Account.address}}</td>
+    </tr>
+    {{#if transaction.DeliverMin }}
+        <tr>
+            <td align="center">DeliverMin</td>
+            <td align="center">{{  tx.DeliverMin.value }} {{ tx.DeliverMin.currency }}</td>
+        </tr>
+    {{/if}}
+    {{#if transaction.Amount }}
+        <tr>
+            <td align="center">Amount</td>
+            <td align="center">{{  tx.Amount.value }} {{ tx.Amount.currency }}</td>
+        </tr>
+    {{/if}}
+    <tr>
+        <td align="center">CheckID</td>
+        <td align="center">{{  tx.CheckID }}</td>
+    </tr>
+</table>

@@ -1,0 +1,19 @@
+
+<table align="center">
+    <tr>
+        <td align="center">Account</td>
+        <td align="center">{{ tx.Account.address}}</td>
+    </tr>
+    {{#if transaction.Authorize }}
+        <tr>
+            <td align="center">Authorize</td>
+            <td align="center">{{  tx.Authorizd }}</td>
+        </tr>
+    {{/if}}
+    {{#if transaction.Unauthorize }}
+        <tr>
+            <td align="center">Unauthorize</td>
+            <td align="center">{{  tx.Unauthorize }}</td>
+        </tr>
+    {{/if}}
+</table>

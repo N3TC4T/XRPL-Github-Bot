@@ -1,0 +1,22 @@
+<table align="center">
+    <tr>
+        <td align="center">Account</td>
+        <td align="center">{{ tx.Account.address}}</td>
+    </tr>
+    <tr>
+        <td align="center">TakerGets</td>
+        <td align="center">{{ tx.TakerGets.value}} {{tx.TakerGets.issuer}}{{tx.TakerGets.currency}}</td>
+    </tr>
+    <tr>
+        <td align="center">TakerPays</td>
+        <td align="center">{{ tx.TakerPays.value}} {{tx.TakerPays.issuer}}{{tx.TakerPays.currency}}</td>
+    </tr>
+    <tr>
+        <td align="center">Expiration</td>
+        <td align="center">{{ tx.Expiration}}</td>
+    </tr>
+    <tr>
+        <td align="center">OfferSequence</td>
+        <td align="center">{{ tx.OfferSequence}}</td>
+    </tr>
+</table>

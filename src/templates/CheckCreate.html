@@ -1,0 +1,24 @@
+<table align="center">
+    <tr>
+        <td align="center">Account</td>
+        <td align="center">{{ tx.Account.address}}</td>
+    </tr>
+    <tr>
+        <td align="center">Destination</td>
+        <td align="center">{{ tx.Destination.address}}{{#if tx.Destination.tag }}:{{tx.Destination.tag}}{{/if}}</td>
+    </tr>
+    {{#if transaction.SendMax }}
+        <tr>
+            <td align="center">SendMax</td>
+            <td align="center">{{  tx.SendMax.value }} {{ tx.SendMax.currency }}</td>
+        </tr>
+    {{/if}}
+    <tr>
+        <td align="center">Expiration</td>
+        <td align="center">{{  tx.Expiration }}</td>
+    </tr>
+    <tr>
+        <td align="center">InvoiceID</td>
+        <td align="center">{{  tx.InvoiceID }}</td>
+    </tr>
+</table>

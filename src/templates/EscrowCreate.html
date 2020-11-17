@@ -1,0 +1,36 @@
+<table align="center">
+    <tr>
+        <td align="center">Transaction Type</td>
+        <td align="center">{{ tx.Type}}</td>
+    </tr>
+    <tr>
+        <td align="center">Account</td>
+        <td align="center">{{ tx.Account.address}}</td>
+    </tr>
+    <tr>
+        <td align="center">Destination</td>
+        <td align="center">{{ tx.Destination.address}}{{#if tx.Destination.tag }}:{{tx.Destination.tag}}{{/if}}</td>
+    </tr>
+    <tr>
+        <td align="center">Amount</td>
+        <td align="center">{{  tx.Amount.value }} {{ tx.Amount.currency }}</td>
+    </tr>
+    {{#if tx.FinishAfter}}
+    <tr>
+        <td align="center">FinishAfter</td>
+        <td align="center">{{  tx.FinishAfter }}</td>
+    </tr>
+    {{/if}}
+    {{#if tx.CancelAfter}}
+    <tr>
+        <td align="center">CancelAfter</td>
+        <td align="center">{{  tx.CancelAfter }}</td>
+    </tr>
+    {{/if}}
+    {{#if tx.Condition }}
+    <tr>
+        <td align="center">Condition</td>
+        <td align="center">{{  tx.Condition }}</td>
+    </tr>
+    {{/if}}
+</table>

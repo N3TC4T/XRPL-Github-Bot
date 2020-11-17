@@ -1,0 +1,16 @@
+<table align="center">
+    <tr>
+        <td align="center">Account</td>
+        <td align="center">{{ tx.Account.address}}</td>
+    </tr>
+    {{#each tx.SignerEntries}}
+        <tr>
+            <td align="center">{{this.account}}</td>
+            <td align="center">{{ this.weight }}</td>
+        </tr>
+    {{/each}}
+    <tr>
+        <td align="center">SignerQuorum</td>
+        <td align="center">{{ tx.SignerQuorum}}</td>
+    </tr>
+</table>

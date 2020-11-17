@@ -1,0 +1,39 @@
+{
+  "name": "xrpl_github_bot",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -w",
+    "prestart": "copyfiles -u 1 src/templates/*.html dist/",
+    "start": "probot run ./dist/index.js"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/**/*.d.ts"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "probot": "^10.9.5",
+    "axios": "^0.21.0",
+    "bignumber.js": "^9.0.1",
+    "copyfiles": "^2.4.0",
+    "handlebars": "^4.7.6",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^14.14.7",
+    "nodemon": "^2.0.6",
+    "smee-client": "^1.2.2",
+    "typescript": "3.9.5"
+  },
+  "engines": {
+    "node": ">= 10.13.0"
+  }
+}

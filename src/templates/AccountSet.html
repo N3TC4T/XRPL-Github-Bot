@@ -1,0 +1,42 @@
+<table align="center">
+<tr>
+    <td align="center">Account</td>
+    <td align="center">{{ tx.Account.address}}</td>
+</tr>
+{{#if tx.Domain}}
+    <tr>
+        <td align="center">Domain</td>
+        <td align="center">{{ tx.Domain}}</td>
+    </tr>
+{{/if}}
+{{#if tx.EmailHash}}
+    <tr>
+        <td align="center">EmailHash</td>
+        <td align="center">{{ tx.EmailHash}}</td>
+    </tr>
+{{/if}}
+{{#if tx.MessageKey}}
+    <tr>
+        <td align="center">MessageKey</td>
+        <td align="center">{{ tx.MessageKey}}</td>
+    </tr>
+{{/if}}
+{{#if tx.TransferRate}}
+    <tr>
+        <td align="center">TransferRate</td>
+        <td align="center">{{ tx.TransferRate}}</td>
+    </tr>
+{{/if}}
+{{#if tx.SetFlag}}
+    <tr>
+        <td align="center">SetFlag</td>
+        <td align="center">{{ tx.SetFlag}}</td>
+    </tr>
+{{/if}}
+{{#if tx.ClearFlag}}
+    <tr>
+        <td align="center">ClearFlag</td>
+        <td align="center">{{ tx.ClearFlag}}</td>
+    </tr>
+{{/if}}
+</table>
