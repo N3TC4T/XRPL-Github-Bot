@@ -1,4 +1,4 @@
-import { get, isUndefined } from 'lodash';
+import { get } from 'lodash';
 
 import BaseTransaction from './base';
 

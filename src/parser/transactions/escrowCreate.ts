@@ -1,4 +1,4 @@
-import { has, get, set, isUndefined, isNumber, toInteger } from 'lodash';
+import { get, isUndefined } from 'lodash';
 
 import BaseTransaction from './base';
 import Amount from '../common/amount';

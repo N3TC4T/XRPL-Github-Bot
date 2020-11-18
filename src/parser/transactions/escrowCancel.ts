@@ -1,4 +1,4 @@
-import { get, set, isUndefined } from 'lodash';
+import { get } from 'lodash';
 
 import BaseTransaction from './base';
 
@@ -13,16 +13,8 @@ class EscrowCancel extends BaseTransaction {
         super(tx);
     }
 
-    set Owner(owner: string) {
-        set(this, ['tx', 'Owner'], owner);
-    }
-
     get Owner(): string {
         return get(this, ['tx', 'Owner']);
-    }
-
-    set OfferSequence(sequence: number) {
-        set(this, ['tx', 'OfferSequence'], sequence);
     }
 
     get OfferSequence(): number {

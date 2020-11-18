@@ -16,21 +16,6 @@ import { LedgerTransactionType } from '../types';
 class AccountSet extends BaseTransaction {
     constructor(tx?: LedgerTransactionType) {
         super(tx);
-
-        // set transaction type if not set
-        if (isUndefined(this.Type)) {
-            this.Type = 'AccountSet';
-        }
-
-        this.fields = this.fields.concat([
-            'ClearFlag',
-            'Domain',
-            'EmailHash',
-            'MessageKey',
-            'SetFlag',
-            'TransferRate',
-            'TickSize',
-        ]);
     }
 
     get SetFlag(): string {

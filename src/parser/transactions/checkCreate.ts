@@ -1,4 +1,4 @@
-import { has, get, set, isUndefined, isNumber, toInteger } from 'lodash';
+import { has, get, isUndefined } from 'lodash';
 
 import BaseTransaction from './base';
 import Amount from '../common/amount';
@@ -13,10 +13,6 @@ class CheckCreate extends BaseTransaction {
 
     constructor(tx?: LedgerTransactionType) {
         super(tx);
-        // set transaction type if not set
-        if (isUndefined(this.Type)) {
-            this.Type = 'CheckCreate';
-        }
     }
 
     get SendMax(): AmountType {

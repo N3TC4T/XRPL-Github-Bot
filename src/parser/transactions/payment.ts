@@ -1,5 +1,5 @@
 /* eslint-disable no-lonely-if */
-import { get, set, has, isUndefined, isNumber, toInteger, find } from 'lodash';
+import { get, has, isUndefined } from 'lodash';
 
 import BaseTransaction from './base';
 

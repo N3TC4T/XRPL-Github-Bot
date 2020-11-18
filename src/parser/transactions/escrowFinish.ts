@@ -1,4 +1,4 @@
-import { has, get, set, isUndefined, findKey } from 'lodash';
+import { get, isUndefined, findKey } from 'lodash';
 
 import BaseTransaction from './base';
 import Amount from '../common/amount';
@@ -57,20 +57,12 @@ class EscrowFinish extends BaseTransaction {
         return get(this, ['tx', 'Owner']);
     }
 
-    set Fulfillment(fulfillment: string) {
-        set(this, ['tx', 'Fulfillment'], fulfillment);
-    }
-
     get Fulfillment(): string {
         return get(this, ['tx', 'Fulfillment']);
     }
 
     get Condition(): string {
         return get(this, ['tx', 'Condition']);
-    }
-
-    set OfferSequence(sequence: number) {
-        set(this, ['tx', 'OfferSequence'], sequence);
     }
 
     get OfferSequence(): number {

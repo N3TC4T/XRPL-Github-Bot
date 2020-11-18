@@ -15,13 +15,6 @@ import { LedgerTransactionType } from '../types';
 class AccountDelete extends BaseTransaction {
     constructor(tx?: LedgerTransactionType) {
         super(tx);
-
-        // set transaction type if not set
-        if (isUndefined(this.Type)) {
-            this.Type = 'AccountDelete';
-        }
-
-        this.fields = this.fields.concat(['Destination', 'DestinationTag']);
     }
 
     get Amount(): AmountType {

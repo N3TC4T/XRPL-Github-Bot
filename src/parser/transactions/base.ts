@@ -1,7 +1,7 @@
 /**
  * Base Ledger transaction parser
  */
-import { set, get, has, isUndefined } from 'lodash';
+import { get, has, isUndefined } from 'lodash';
 
 import LedgerDate from '../common/date';
 import Amount from '../common/amount';
@@ -29,10 +29,6 @@ class BaseTransaction {
 
     get Type(): string {
         return get(this, ['tx', 'TransactionType'], undefined);
-    }
-
-    set Type(type: string) {
-        set(this, ['tx', 'TransactionType'], type);
     }
 
     get Account(): Account {
@@ -72,20 +68,6 @@ class BaseTransaction {
         return flagParser.parse();
     }
 
-    set Flags(flags: any) {
-        const intFlags = get(this, ['tx', 'Flags'], undefined);
-        const flagParser = new Flag(this.Type, intFlags);
-
-        flags.forEach((f: any) => {
-            flagParser.set(f);
-        });
-        set(this, ['tx', 'Flags'], flagParser.get());
-    }
-
-    set Fee(fee: string) {
-        set(this, ['tx', 'Fee'], new Amount(fee, false).xrpToDrops());
-    }
-
     get Fee(): string {
         const fee = get(this, ['tx', 'Fee'], undefined);
         if (isUndefined(fee)) return undefined;
@@ -114,18 +96,10 @@ class BaseTransaction {
         };
     }
 
-    set TransactionResult(result: TransactionResult) {
-        set(this, ['meta', 'TransactionResult'], result.code);
-        set(this, ['meta', 'TransactionResultMessage'], result.message);
-    }
-
     get Hash(): string {
         return get(this, ['tx', 'hash']);
     }
 
-    set Hash(transactionId: string) {
-        set(this, ['tx', 'hash'], transactionId);
-    }
 
     get LedgerIndex(): number {
         return get(this, ['tx', 'ledger_index']);
@@ -148,36 +122,16 @@ class BaseTransaction {
         return get(this, ['tx', 'Signers'], []);
     }
 
-    set Signers(signers: Array<any>) {
-        set(this, ['tx', 'Signers'], signers);
-    }
-
     get SigningPubKey(): string {
         return get(this, ['tx', 'SigningPubKey']);
-    }
-
-    set SigningPubKey(signingPubKey: string) {
-        set(this, ['tx', 'SigningPubKey'], signingPubKey);
     }
 
     get Sequence(): number {
         return get(this, ['tx', 'Sequence'], undefined);
     }
 
-    set Sequence(sequence: number) {
-        set(this, ['tx', 'Sequence'], sequence);
-    }
-
     get LastLedgerSequence(): number {
         return get(this, ['tx', 'LastLedgerSequence'], undefined);
-    }
-
-    set LastLedgerSequence(ledgerSequence: number) {
-        set(this, ['tx', 'LastLedgerSequence'], ledgerSequence);
-    }
-
-    set PreviousTxnID(id: string) {
-        set(this, ['tx', 'PreviousTxnID'], id);
     }
 
     get PreviousTxnID(): string {

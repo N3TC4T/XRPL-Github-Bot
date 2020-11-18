@@ -1,4 +1,4 @@
-import { set, get, isUndefined } from 'lodash';
+import { get, isUndefined } from 'lodash';
 
 import BaseTransaction from './base';
 import CheckCreate from './checkCreate';
@@ -12,10 +12,6 @@ class CheckCancel extends BaseTransaction {
 
     constructor(tx?: LedgerTransactionType) {
         super(tx);
-        // set transaction type if not set
-        if (isUndefined(this.Type)) {
-            this.Type = 'CheckCancel';
-        }
     }
 
     get CheckID(): string {

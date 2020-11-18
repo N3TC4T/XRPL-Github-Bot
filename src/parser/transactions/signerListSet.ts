@@ -1,4 +1,4 @@
-import { get, isUndefined, flatMap } from 'lodash';
+import { get, flatMap } from 'lodash';
 
 import BaseTransaction from './base';
 

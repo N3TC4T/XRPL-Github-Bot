@@ -2,7 +2,7 @@
  * TrustLine transaction Parser
  */
 
-import { get, set, isUndefined, toNumber } from 'lodash';
+import { get, toNumber } from 'lodash';
 import BaseTransaction from './base';
 
 /* Types ==================================================================== */
